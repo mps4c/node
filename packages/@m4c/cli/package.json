@@ -1,0 +1,34 @@
+{
+  "private": true,
+  "name": "@m4c/cli",
+  "version": "0.1.2",
+  "description": "m4c cli",
+  "bin": {
+    "m4c": "./index.js"
+  },
+  "scripts": {
+    "build": "rimraf compile dist && tsc -p tsconfig.compile.json && rollup -c",
+    "publish": "npm run build && package-json-minifier && cpy README.md dist && cd dist && npm publish"
+  },
+  "author": "Juyeong Maing <mjy9088@naver.com>",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mps4c/node-m4c.git",
+    "directory": "packages/@m4c/cli"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "@m4c/core": "^0.1.1",
+    "commander": "^12.0.0"
+  },
+  "devDependencies": {
+    "@rollup/plugin-terser": "^0.4.4",
+    "@types/node": "^20.11.25",
+    "cpy-cli": "^5.0.0",
+    "package.json-minifier": "^0.0.4",
+    "rimraf": "^5.0.5",
+    "rollup": "^4.12.1",
+    "rollup-plugin-shebang-bin": "^0.0.6",
+    "typescript": "^5.4.2"
+  }
+}

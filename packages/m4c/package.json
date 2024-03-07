@@ -1,0 +1,25 @@
+{
+  "private": true,
+  "name": "m4c",
+  "version": "0.0.1",
+  "description": "m4c",
+  "scripts": {
+    "build": "rimraf dist && mkdirp dist && package-json-minifier",
+    "publish": "npm run build && package-json-minifier && cpy README.md dist && cd dist && npm publish"
+  },
+  "author": "Juyeong Maing <mjy9088@naver.com>",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mps4c/node-m4c.git",
+    "directory": "packages/m4c"
+  },
+  "dependencies": {
+    "@m4c/cli": "0.1.2"
+  },
+  "devDependencies": {
+    "cpy-cli": "^5.0.0",
+    "mkdirp": "^3.0.1",
+    "package.json-minifier": "^0.0.4",
+    "rimraf": "^5.0.5"
+  }
+}
